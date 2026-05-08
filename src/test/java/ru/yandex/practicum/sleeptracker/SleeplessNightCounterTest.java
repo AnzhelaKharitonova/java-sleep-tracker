@@ -37,6 +37,7 @@ class SleeplessNightCounterTest {
 
         assertEquals(0, function.apply(sessions).getResult());
     }
+
     @Test
     void resultShouldBe1IfOneDaySession() throws InvalidDataInLogException {
         SleeplessNightCounter function = new SleeplessNightCounter();
@@ -47,6 +48,7 @@ class SleeplessNightCounterTest {
 
         assertEquals(1, function.apply(sessions).getResult());
     }
+
     @Test
     void resultShouldBe2IfTwoNightSession() throws InvalidDataInLogException {
         SleeplessNightCounter function = new SleeplessNightCounter();
@@ -59,6 +61,7 @@ class SleeplessNightCounterTest {
 
         assertEquals(0, function.apply(sessions).getResult());
     }
+
     @Test
     void resultShouldBe30IfNotNightSession() throws InvalidDataInLogException {
         SleeplessNightCounter function = new SleeplessNightCounter();
@@ -71,6 +74,7 @@ class SleeplessNightCounterTest {
 
         assertEquals(30, function.apply(sessions).getResult());
     }
+
     @Test
     void resultShouldBe1IfTimeFirstSessionBeforeNoon() throws InvalidDataInLogException {
         SleeplessNightCounter function = new SleeplessNightCounter();

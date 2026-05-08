@@ -47,6 +47,7 @@ class SleepingSessionTest {
         assertEquals(Chronotype.LARK, sleepingSession1.getChronotype());
         assertEquals(Chronotype.LARK, sleepingSession2.getChronotype());
     }
+
     @Test
     void returnChronotypePigeon() throws InvalidDataInLogException {
         SleepingSession sleepingSession1 = SleepingSession.parseSessionFromLine("01.01.25 01:00;01.01.25 08:59;NORMAL");
