@@ -9,7 +9,7 @@ import java.util.OptionalDouble;
 import java.util.function.Function;
 
 public class AverageSessionDuration implements Function<List<SleepingSession>, SleepAnalysisResult<Integer>> {
-    private final String DESCRIPTION = "Средняя продолжительность сессии (в минутах)";
+    private static final String DESCRIPTION = "Средняя продолжительность сессии (в минутах)";
 
     @Override
     public SleepAnalysisResult<Integer> apply(List<SleepingSession> sleepingSessions) {

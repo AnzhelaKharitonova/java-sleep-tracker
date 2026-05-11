@@ -9,7 +9,7 @@ import java.util.OptionalLong;
 import java.util.function.Function;
 
 public class MaximumSessionDuration implements Function<List<SleepingSession>, SleepAnalysisResult<Integer>> {
-    private final String DESCRIPTION = "Максимальная продолжительность сессии (в минутах)";
+    private static final String DESCRIPTION = "Максимальная продолжительность сессии (в минутах)";
 
     @Override
     public SleepAnalysisResult<Integer> apply(List<SleepingSession> sleepingSessions) {

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.function.Function;
 
 public class BadSleepSessionCounter implements Function<List<SleepingSession>, SleepAnalysisResult<Integer>> {
-    private final String DESCRIPTION = "Количество сессий с плохим качеством сна";
+    private static final String DESCRIPTION = "Количество сессий с плохим качеством сна";
 
     @Override
     public SleepAnalysisResult<Integer> apply(List<SleepingSession> sleepingSessions) {

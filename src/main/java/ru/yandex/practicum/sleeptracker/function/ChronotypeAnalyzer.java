@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.function.Function;
 
 public class ChronotypeAnalyzer implements Function<List<SleepingSession>, SleepAnalysisResult<Chronotype>> {
-    private final String DESCRIPTION = "Ваш хронотип";
+    private static final String DESCRIPTION = "Ваш хронотип";
 
     @Override
     public SleepAnalysisResult<Chronotype> apply(List<SleepingSession> sleepingSessions) {
