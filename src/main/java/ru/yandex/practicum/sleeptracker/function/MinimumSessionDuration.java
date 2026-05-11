@@ -9,6 +9,7 @@ import java.util.OptionalLong;
 import java.util.function.Function;
 
 public class MinimumSessionDuration implements Function<List<SleepingSession>, SleepAnalysisResult<Integer>> {
+    private final String DESCRIPTION = "Минимальная продолжительность сессии (в минутах)";
 
     @Override
     public SleepAnalysisResult<Integer> apply(List<SleepingSession> sleepingSessions) {
@@ -18,8 +19,7 @@ public class MinimumSessionDuration implements Function<List<SleepingSession>, S
                 .mapToLong(Long::longValue)
                 .min();
         if (result.isPresent()) {
-            return new SleepAnalysisResult<>((int) result.getAsLong(),
-                    "Минимальная продолжительность сессии (в минутах)");
+            return new SleepAnalysisResult<>((int) result.getAsLong(), DESCRIPTION);
         }
         return null;
     }

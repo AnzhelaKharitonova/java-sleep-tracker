@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.function.Function;
 
 public class SleeplessNightCounter implements Function<List<SleepingSession>, SleepAnalysisResult<Integer>> {
+    private final String DESCRIPTION = "Количество бессонных ночей";
 
     @Override
     public SleepAnalysisResult<Integer> apply(List<SleepingSession> sleepingSessions) {
@@ -25,14 +26,11 @@ public class SleeplessNightCounter implements Function<List<SleepingSession>, Sl
         }
 
         long amountOfNightInPeriod = ChronoUnit.DAYS.between(startDate, endDate);
-
         long count = sleepingSessions.stream()
                 .filter(session -> session.isNighttimeSleepSession())
                 .count();
         long result = amountOfNightInPeriod - count;
 
-
-        return new SleepAnalysisResult<>((int) result,
-                "Количество бессонных ночей");
+        return new SleepAnalysisResult<>((int) result, DESCRIPTION);
     }
 }

@@ -9,6 +9,7 @@ import java.util.OptionalDouble;
 import java.util.function.Function;
 
 public class AverageSessionDuration implements Function<List<SleepingSession>, SleepAnalysisResult<Integer>> {
+    private final String DESCRIPTION = "Средняя продолжительность сессии (в минутах)";
 
     @Override
     public SleepAnalysisResult<Integer> apply(List<SleepingSession> sleepingSessions) {
@@ -18,8 +19,7 @@ public class AverageSessionDuration implements Function<List<SleepingSession>, S
                 .mapToLong(Long::longValue)
                 .average();
         if (result.isPresent()) {
-            return new SleepAnalysisResult<>((int) result.getAsDouble(),
-                    "Средняя продолжительность сессии (в минутах)");
+            return new SleepAnalysisResult<>((int) result.getAsDouble(), DESCRIPTION);
         }
         return null;
     }
